@@ -6,5 +6,10 @@ SESSIONS=$(\
   done \
   | gum choose)
 
+if [ -z $SESSIONS ]; then
+  echo "Ok bye!"
+  exit
+fi
+
 zsh $TMUX_SESSIONS_PATH/$SESSIONS.sh
 
